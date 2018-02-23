@@ -59,12 +59,10 @@
 }
 ```
 有了键盘通知以后，我们可以轻易的实现本文开头提出的问题，这里笔者做了个Demo演示如下：
-![](http://7xij1g.com1.z0.glb.clouddn.com/keyboard_2.gif)代码在github中的地址
+![](http://7xij1g.com1.z0.glb.clouddn.com/keyboard_2.gif)
+
+[点此进入代码在github中的地址](https://github.com/zjh171/KeyboardManagerDemo.git)
 
 
-引用
+#####引用
 [Text Programming Guide for iOS](https://developer.apple.com/library/content/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/KeyboardManagement/KeyboardManagement.html)
-
-
-
-
