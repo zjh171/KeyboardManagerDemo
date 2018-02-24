@@ -10,6 +10,9 @@
 #import "TextViewController.h"
 #import "InputViewController.h"
 #import "KeyboardCoverTextFieldViewController.h"
+#import "CustomKeyboardViewController.h"
+#import "IDCardKeyboardViewController.h"
+
 //获取屏幕 宽度、高度
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
@@ -71,14 +74,22 @@
         case 2:{
             KeyboardCoverTextFieldViewController *cover = [[KeyboardCoverTextFieldViewController alloc] init];
             [self.navigationController pushViewController:cover animated:YES];
-
+        }
+            break;
+        case 4:{
+            CustomKeyboardViewController *customKeyboardViewController = [[CustomKeyboardViewController alloc] init];
+            [self.navigationController pushViewController:customKeyboardViewController animated:YES];
+        }
+            break;
+        case 3:{
+            IDCardKeyboardViewController *idCardKeyboardViewController = [[IDCardKeyboardViewController alloc] init];
+            [self.navigationController pushViewController:idCardKeyboardViewController animated:YES];
         }
             break;
             
         default:
             break;
     }
-    
 }
 
 
@@ -93,7 +104,7 @@
 
 -(NSArray *)titles{
     if (!_titles) {
-        _titles = @[@"TextViewController",@"InputViewController",@"KeyboardCoverTextFieldViewController"];
+        _titles = @[@"TextViewController",@"InputViewController",@"KeyboardCoverTextFieldViewController",@"IDCardKeyboardViewController",@"CustomKeyboardViewController"];
     }
     return _titles;
 }

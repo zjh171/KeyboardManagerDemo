@@ -15,8 +15,6 @@
 
 @interface InputViewController ()
 
-
-
 @property (nonatomic, strong) UITextField *xTextField;
 @end
 

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		B0F661119F5F6FFA8B75AAE3 /* libPods-KeyboardManagerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0133539410CA86B204893101 /* libPods-KeyboardManagerDemo.a */; };
 		DE10CBAE203FC86D00C89497 /* KeyboardCoverTextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE10CBAD203FC86D00C89497 /* KeyboardCoverTextFieldViewController.m */; };
+		DE10CBB62041624100C89497 /* CustomKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE10CBB52041624100C89497 /* CustomKeyboardViewController.m */; };
+		DE10CBB9204162EF00C89497 /* CustomKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE10CBB8204162EF00C89497 /* CustomKeyboardView.m */; };
+		DE10CBBC204169A300C89497 /* IDCardKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE10CBBB204169A300C89497 /* IDCardKeyboardViewController.m */; };
+		DE10CBBF2041757600C89497 /* UITextField+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = DE10CBBE2041757600C89497 /* UITextField+Util.m */; };
 		DEC8D709201F474B007808E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC8D708201F474B007808E9 /* AppDelegate.m */; };
 		DEC8D70C201F474B007808E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC8D70B201F474B007808E9 /* ViewController.m */; };
 		DEC8D711201F474B007808E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC8D710201F474B007808E9 /* Assets.xcassets */; };
@@ -24,6 +28,14 @@
 		73F91B9289E9AF81975C9CAB /* Pods-KeyboardManagerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardManagerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KeyboardManagerDemo/Pods-KeyboardManagerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		DE10CBAC203FC86D00C89497 /* KeyboardCoverTextFieldViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardCoverTextFieldViewController.h; sourceTree = "<group>"; };
 		DE10CBAD203FC86D00C89497 /* KeyboardCoverTextFieldViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardCoverTextFieldViewController.m; sourceTree = "<group>"; };
+		DE10CBB42041624100C89497 /* CustomKeyboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomKeyboardViewController.h; sourceTree = "<group>"; };
+		DE10CBB52041624100C89497 /* CustomKeyboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomKeyboardViewController.m; sourceTree = "<group>"; };
+		DE10CBB7204162EF00C89497 /* CustomKeyboardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomKeyboardView.h; sourceTree = "<group>"; };
+		DE10CBB8204162EF00C89497 /* CustomKeyboardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomKeyboardView.m; sourceTree = "<group>"; };
+		DE10CBBA204169A300C89497 /* IDCardKeyboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDCardKeyboardViewController.h; sourceTree = "<group>"; };
+		DE10CBBB204169A300C89497 /* IDCardKeyboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDCardKeyboardViewController.m; sourceTree = "<group>"; };
+		DE10CBBD2041757600C89497 /* UITextField+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+Util.h"; sourceTree = "<group>"; };
+		DE10CBBE2041757600C89497 /* UITextField+Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Util.m"; sourceTree = "<group>"; };
 		DEC8D704201F474B007808E9 /* KeyboardManagerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardManagerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC8D707201F474B007808E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DEC8D708201F474B007808E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -103,6 +115,14 @@
 				DEC8D721202065D3007808E9 /* InputViewController.m */,
 				DE10CBAC203FC86D00C89497 /* KeyboardCoverTextFieldViewController.h */,
 				DE10CBAD203FC86D00C89497 /* KeyboardCoverTextFieldViewController.m */,
+				DE10CBB42041624100C89497 /* CustomKeyboardViewController.h */,
+				DE10CBB52041624100C89497 /* CustomKeyboardViewController.m */,
+				DE10CBB7204162EF00C89497 /* CustomKeyboardView.h */,
+				DE10CBB8204162EF00C89497 /* CustomKeyboardView.m */,
+				DE10CBBA204169A300C89497 /* IDCardKeyboardViewController.h */,
+				DE10CBBB204169A300C89497 /* IDCardKeyboardViewController.m */,
+				DE10CBBD2041757600C89497 /* UITextField+Util.h */,
+				DE10CBBE2041757600C89497 /* UITextField+Util.m */,
 			);
 			path = KeyboardManagerDemo;
 			sourceTree = "<group>";
@@ -239,6 +259,10 @@
 				DEC8D709201F474B007808E9 /* AppDelegate.m in Sources */,
 				DE10CBAE203FC86D00C89497 /* KeyboardCoverTextFieldViewController.m in Sources */,
 				DEC8D722202065D3007808E9 /* InputViewController.m in Sources */,
+				DE10CBBF2041757600C89497 /* UITextField+Util.m in Sources */,
+				DE10CBB62041624100C89497 /* CustomKeyboardViewController.m in Sources */,
+				DE10CBBC204169A300C89497 /* IDCardKeyboardViewController.m in Sources */,
+				DE10CBB9204162EF00C89497 /* CustomKeyboardView.m in Sources */,
 				DEC8D71F201F4861007808E9 /* TextViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
