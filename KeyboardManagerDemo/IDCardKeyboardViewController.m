@@ -86,6 +86,7 @@
 
 -(void)keyboardWillHide:(NSNotification *)notification{
     self.extrakeyButton.transform = CGAffineTransformIdentity;
+    [self.extrakeyButton removeFromSuperview];
 }
 
 - (void)buttonDidClicked{
