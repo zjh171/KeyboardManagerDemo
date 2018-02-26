@@ -43,7 +43,6 @@
     
     self.xTextField.placeholder = @"Please Input Here";
     [self.view addSubview:self.xTextField];
-    
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
@@ -52,35 +51,36 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 -(void)keyboardWillShow:(NSNotification *)notification{
-    UIWindow *tempWindow = [[[UIApplication sharedApplication] windows] lastObject];
     [self.extrakeyButton removeFromSuperview];
-    self.extrakeyButton = nil;
-    [tempWindow addSubview:self.extrakeyButton];
-
-    NSDictionary *userInfo = notification.userInfo;
-    NSTimeInterval animationDuration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
-    NSInteger animationCurve = [[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue];
-    CGRect kbEndFrame = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    CGFloat kbHeight = kbEndFrame.size.height;
-
+    self.extrakeyButton     = nil;
+    NSDictionary *userInfo  = [notification userInfo];
+    CGFloat animationDuration   = [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    CGRect kbEndFrame           = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGFloat kbHeight            = kbEndFrame.size.height;
     CGFloat extrakeyButtonX = 0;
     CGFloat extrakeyButtonW = 0;
     CGFloat extrakeyButtonH = 0;
     extrakeyButtonW = (SCREEN_WIDTH - 7) / 3;
     extrakeyButtonH = kbHeight / 4;
-    
-    CGFloat extrakeyButtonY = [UIScreen mainScreen].bounds.size.height + kbHeight - extrakeyButtonH;
-    self.extrakeyButton.frame = CGRectMake(extrakeyButtonX, extrakeyButtonY, extrakeyButtonW, extrakeyButtonH);
 
-    //animation
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    [UIView setAnimationDuration:animationDuration];
-    [UIView setAnimationCurve:animationCurve];
-    self.extrakeyButton.transform = CGAffineTransformTranslate(self.extrakeyButton.transform, 0, -kbHeight);
-    [UIView commitAnimations];
+    CGFloat extrakeyButtonY = 0;
+    extrakeyButtonY = SCREEN_HEIGHT + kbHeight - extrakeyButtonH;
+    //init here
+    self.extrakeyButton = [[UIButton alloc] initWithFrame:CGRectMake(extrakeyButtonX, extrakeyButtonY, extrakeyButtonW, extrakeyButtonH)];
+    [self.extrakeyButton addTarget:self action:@selector(buttonDidClicked) forControlEvents:UIControlEventTouchUpInside];
+    self.extrakeyButton.titleLabel.font = [UIFont systemFontOfSize:27];
+    [self.extrakeyButton setTitle:@"X" forState:(UIControlStateNormal)];
+    [self.extrakeyButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    //add to window
+    UIWindow *tempWindow = [[[UIApplication sharedApplication] windows] lastObject];
+    [tempWindow addSubview:self.extrakeyButton];
+    //animate
+    [UIView animateWithDuration:animationDuration animations:^{
+        CGRect frame    = self.extrakeyButton.frame;
+        frame.origin.y  = frame.origin.y - kbHeight;
+        self.extrakeyButton.frame = frame;
+    } completion:nil];
 }
 
 
@@ -107,19 +107,6 @@
         _xTextField = [[UITextField alloc] init];
     }
     return _xTextField;
-}
-
-
--(UIButton *)extrakeyButton{
-    if (!_extrakeyButton) {
-        _extrakeyButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _extrakeyButton.frame = CGRectMake(30, SCREEN_HEIGHT, 40, 40);
-        _extrakeyButton.titleLabel.font = [UIFont systemFontOfSize:27];
-        [_extrakeyButton setTitle:@"X" forState:(UIControlStateNormal)];
-        [_extrakeyButton addTarget:self action:@selector(buttonDidClicked) forControlEvents:UIControlEventTouchUpInside];
-        [_extrakeyButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    }
-    return _extrakeyButton;
 }
 
 
