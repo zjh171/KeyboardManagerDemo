@@ -49,6 +49,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 -(void)keyboardWillShow:(NSNotification *)notification{
     [self.extrakeyButton removeFromSuperview];
     self.extrakeyButton     = nil;

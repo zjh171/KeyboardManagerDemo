@@ -13,7 +13,7 @@
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
-@interface CustomKeyboardViewController ()
+@interface CustomKeyboardViewController ()<CustomKeyboardDelegate>
 
 @property (nonatomic, strong) UITextField *xTextField;
 
@@ -39,10 +39,14 @@
     self.xTextField.placeholder = @"Please Input Here";
     [self.view addSubview:self.xTextField];
     
-    CustomKeyboardView *keyView = [[CustomKeyboardView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 132)];
-    keyView.backgroundColor = UIColor.redColor;
+    CustomKeyboardView *keyView = [[CustomKeyboardView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 176)];
+    keyView.delegate = self;
     self.xTextField.inputView = keyView;
 
+}
+
+-(void)keyboardItemDidClicked:(NSString *)item{
+    self.xTextField.text = [self.xTextField.text stringByAppendingString:item];
 }
 
 - (void)didReceiveMemoryWarning {
