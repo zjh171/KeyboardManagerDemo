@@ -13,11 +13,8 @@
 #import "CustomKeyboardViewController.h"
 #import "IDCardKeyboardViewController.h"
 
-//获取屏幕 宽度、高度
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
-
-
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
